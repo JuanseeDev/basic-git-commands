@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Comandos Básicos de Git</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" href="https://img.icons8.com/ios_filled/512/FFFFFF/github.png">
+</head>
+
+<body>
+    <header>
+        <h1>🚀 Comandos Básicos de Git</h1>
+        <p>Aprende a usar Git para controlar versiones y subir tus proyectos como un profesional.</p>
+    </header>
+
+    <section class="contenedor">
+        <div class="tarjeta">
+            <h2>📁 git init</h2>
+            <p>Inicializa un nuevo repositorio Git en el directorio actual.</p>
+            <code>git init</code>
+        </div>
+        <div class="tarjeta">
+            <h2>➕ git add</h2>
+            <p>Agrega archivos al área de preparación (staging).</p>
+            <code>git add archivo.txt</code><br />
+            <code>git add .</code>
+        </div>
+        <div class="tarjeta">
+            <h2>📝 git commit</h2>
+            <p>Guarda una foto del estado actual del proyecto.</p>
+            <code>git commit -m "Mensaje del cambio"</code>
+        </div>
+        <div class="tarjeta">
+            <h2>🌐 git push</h2>
+            <p>Envía los commits al repositorio remoto.</p>
+            <code>git push origin main</code>
+        </div>
+    </section>
+
+    <section class="flujo">
+        <h2>🧠 ¿Cómo subir tus cambios paso a paso?</h2>
+        <button onclick="mostrarFlujo()" style="margin-bottom: 20px;">Mostrar pasos</button>
+        <div id="pasos" style="display:none;">
+            <ol>
+                <li>📂 Modifica o crea un archivo.</li>
+                <li>➕ Agrega los cambios: <code>git add archivo.txt</code></li>
+                <li>📝 Haz un commit: <code>git commit -m "Tu mensaje"</code></li>
+                <li>🚀 Súbelos al repositorio: <code>git push origin main</code></li>
+            </ol>
+        </div>
+    </section>
+
+    <section class="quiz">
+        <h2>❓ Mini Quiz</h2>
+        <p>¿Qué comando usarías para guardar los cambios con un mensaje?</p>
+        <select id="respuesta">
+            <option value="">-- Elige una opción --</option>
+            <option value="add">git add</option>
+            <option value="commit">git commit -m "mensaje"</option>
+            <option value="push">git push</option>
+        </select>
+        <button onclick="verificar()">Verificar</button>
+        <p id="resultado"></p>
+    </section>
+
+    <section class="seguridad">
+        <h2>🔒 Seguridad en computadoras públicas</h2>
+        <p>Si estás trabajando en un computador público o prestado, ten en cuenta lo siguiente al usar
+            <code>git push</code>:</p>
+        <ul>
+            <li>✅ Solo necesitas ingresar la URL del repositorio una vez con <code>git remote add origin</code>.</li>
+            <li>🔑 Git te pedirá autenticarte con tu usuario y un <strong>token de acceso personal</strong> (PAT), no
+                con tu contraseña.</li>
+            <li>🚫 No uses la opción "recordar contraseña" ni dejes tus claves guardadas.</li>
+            <li>✅ Al terminar, puedes ejecutar <code>git remote remove origin</code> para borrar el enlace al repo
+                remoto.</li>
+            <li>🧹 También puedes eliminar tu token desde tu cuenta de GitHub si ya no lo necesitas.</li>
+        </ul>
+    </section>
+
+
+    <footer>
+        <p>Clase preparada por Juan Sebastián Díaz Tapias • Git para principiantes • Berners Lee</p>
+    </footer>
+
+    <script>
+        function mostrarFlujo() {
+            document.getElementById("pasos").style.display = "block";
+        }
+
+        function verificar() {
+            const resp = document.getElementById("respuesta").value;
+            const resultado = document.getElementById("resultado");
+            if (resp === "commit") {
+                resultado.innerText = "✅ ¡Correcto! Ese es el comando para guardar cambios.";
+                resultado.style.color = "green";
+            } else if (resp === "") {
+                resultado.innerText = "⏳ Por favor selecciona una opción.";
+                resultado.style.color = "gray";
+            } else {
+                resultado.innerText = "❌ No es correcto. Intenta de nuevo.";
+                resultado.style.color = "red";
+            }
+        }
+    </script>
+</body>
+
+</html>
