@@ -65,8 +65,7 @@ Envía tus commits locales al repositorio remoto (por ejemplo, en GitHub).
 
 ### 🔄 `Cómo subir un cambio a un archivo ya existente`
 Supón que editaste un archivo. Los pasos serían:
-
-    ```bash
+    
     git add archivo.html
     git commit -m "Actualicé el contenido del archivo"
     git push origin main
@@ -81,8 +80,7 @@ Supón que editaste un archivo. Los pasos serían:
 -❌ Nunca guardes las credenciales en el navegador o en el sistema.
 
 -✅ Al terminar, puedes ejecutar:
-
-    ```bash
+    
     git remote remove origin
 
 Y también puedes eliminar el token desde tu cuenta de GitHub para mayor seguridad.
